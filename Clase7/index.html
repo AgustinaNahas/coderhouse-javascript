@@ -4,6 +4,8 @@
     <title>Clase7</title>
     <script type="text/javascript">
 
+        // Este es el constructor para la persona
+
         function Persona(nombre, dni){
             this.nombre = nombre;
             this.dni = dni;
@@ -12,41 +14,36 @@
         // var nombreGuardado = sessionStorage.getItem("nombre")
 
         // if (!nombreGuardado){
+
+        // Cada vez que una persona entrra a mi pagina,
+        // guardo su nombre
+
             nombreGuardado = prompt("Ingrese su nombre")
             sessionStorage.setItem("nombre", nombreGuardado)
         // }
 
-        var DNI = 19856124
-
-        sessionStorage.setItem("DNI", DNI);
-
-        // var agus = new Persona("Agus", 12837192);
-        //
-        // console.log(agus)
+        // En caso de que esa persona ya tuviese un carrito, se lo muestra
 
         if (sessionStorage.carrito){
             console.log("Terminá tu compra! Este es tu carrito:")
             console.log(JSON.parse(sessionStorage.carrito))
+        } else {
+
+            // Sino, guarda un carrito con productos cualesquiera (?)
+
+            function Carrito(productos, descuento){
+                this.productos = productos;
+                this.descuento = descuento;
+            }
+
+            var carrito = new Carrito(["discman", "mp3", "ipod", "tocadiscos"], 0.5)
+
+            console.log(carrito);
+
+            var carritoJSON = JSON.stringify(carrito)
+
+            sessionStorage.setItem("carrito_" + nombreGuardado, carritoJSON)
         }
-
-        function Carrito(productos, descuento){
-            this.productos = productos;
-            this.descuento = descuento;
-        }
-
-        var carrito = new Carrito(["discman", "mp3", "ipod", "tocadiscos"], 0.5)
-
-        console.log(carrito);
-
-        var carritoJSON = JSON.stringify(carrito)
-
-        sessionStorage.setItem("carrito_" + nombreGuardado, carritoJSON)
-
-
-
-
-
-
 
     </script>
 </head>
