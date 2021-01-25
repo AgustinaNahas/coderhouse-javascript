@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>El primer script</title>
+    <script type="text/javascript">
+
+        // Objeto Persona
+        // Tiene nombre, edad, altura, si le gustan los gatos
+
+        // var persona = new Object();
+        //
+        // persona.nombre = "Agus";
+        // persona.anioNacimiento = 1995;
+        // persona.edad = 25;
+        // persona.catLover = true;
+        // persona.altura = 1.60;
+        // persona['altura'] = 1.61;
+        //
+        // console.log(persona)
+
+        // var algo = new Object();
+        // algo.m2 = 800
+        // algo.alto = 400
+        // algo.colorDeOjos = 'azul'
+
+        var color = "rojo";
+
+        function decirHola(){
+            var color = "negro"
+            console.log(color)
+        }
+
+        function Persona(nombre, anio, mes, edad, catLover, altura){
+            this.nombre = nombre;
+            this.nacimiento = new Object();
+            this.nacimiento.anio = anio;
+            this.nacimiento.mes = mes;
+            this.edad = edad;
+            this.catLover = catLover;
+            this.altura = altura;
+
+            this.dormir = function(){
+                // this.nombre = "dormilón/a"
+                console.log(this.nombre + " está soñando")
+            }
+
+            this.saludar = decirHola;
+
+        }
+
+        // dormir();
+
+        var agus = new Persona("Agus", 1995, 4, 25, true, 1.60);
+        var samu = new Persona("Samu", 2001, 5, 19, true, 1.80);
+
+        agus.dormir();
+
+        samu.dormir();
+
+        samu.saludar();
+
+
+
+        console.log(samu)
+
+
+        // function Alumno(nombre, nota1, nota2, nota3){
+        //     this.nombre = nombre;
+        //     this.nota1 = nota1;
+        //     this.nota2 = nota2;
+        //     this.nota3 = nota3;
+        // }
+        //
+        // var nombreAlumno = prompt("Ingrese su nombre")
+        // var nota1Alumno = prompt("Ingrese nota 1")
+        // var nota2Alumno = prompt("Ingrese nota 2")
+        // var nota3Alumno = prompt("Ingrese nota 3")
+
+        //
+        // var alumno = new Alumno(nombreAlumno, nota1Alumno, nota2Alumno, nota3Alumno)
+        //
+        // console.log(alumno)
+
+        // var propiedad = prompt("Qué dato querés saber de Agus?")
+        // if (!agus[propiedad]) {
+        //     console.log("No tenemos ese dato de Agus!")
+        // } else {
+        //     console.log(agus[propiedad])
+        // }
+
+        var marca = prompt("Ingrese la marca de su PC");
+        var tipo =  prompt("Es nootebook o desktop?");
+        var anio = parseInt(prompt("Que año?"));
+        var serial = parseInt(prompt("ingrese el numero de serie"));
+
+        function getDatosPC(PC) {
+            return PC.marca + " " + PC.tipo
+        }
+
+        function PC(marca, tipo, anio, serial) {
+            this.marca = marca;
+            this.tipo = tipo;
+            this.anio = anio;
+            this.anio.serial = serial;
+
+            this.datosPublicos =  function(){
+                return getDatosPC(this)
+            };
+        }
+
+        var miPC = new PC(marca,tipo,anio,serial);
+        console.log ("Datos",miPC)
+        console.log(miPC.datosPublicos())
+
+    </script>
+</head>
+<body>
+    <p>Esta página va a tener un objeto persona</p>
+</body>
+</html>

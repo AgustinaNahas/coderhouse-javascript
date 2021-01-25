@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>El primer script</title>
+    <script type="text/javascript">
+
+        var variableVar = "Hola!";
+        let variableLet = 5;
+        const variableConst = 4;
+
+        // if (true) {
+        //     var hello = "Holi";
+        //     console.log(hello); // Holi
+        // }
+        // console.log(hello) // Holi
+        //
+        //
+        // if (true) {
+        //     let hello = "Holi";
+        //     console.log(hello);// Holi
+        // }
+        // console.log(hello) // hello is not defined
+
+
+
+        // ESTO SE LLAMA HOISTING
+        // console.log(hello);
+        // var hello = "hello";
+        //
+        // var hello;
+        // console.log(hello);
+        // hello = "hello";
+
+
+
+        // console.log("asdf");
+        // console.log("asdf");
+        // console.log("asdf");
+        // console.log("asdf");
+        //
+        //
+        // Esto es porque var solo tiene scope global y scope local
+        //
+
+        var hello = "Holi" //GLOBAL
+
+        function newFunction() {
+            var hello = "Hello"; //LOCAL
+
+            console.log(hello)
+        }
+        console.log(hello);
+
+
+
+
+
+        // var promedioFinal;
+
+        // console.log("Antes de la función, promedioFinal es " + promedioFinal)
+
+        // function promedio(nota1, nota2, nota3, nombre){
+        //     var promedioFinal =(nota1+nota2+nota3)/3;
+        //
+        //     console.log("Adentro de la función, promedioFinal es " + promedioFinal)
+        //
+        //     return promedioFinal;
+        // }
+        //
+        // var promedioPrimerTrimestre = promedio(8,7,9, "Juan")
+        //
+        // console.log("Afuera, después de la función, promedioFinal es " + promedioFinal)
+
+
+        // var juan = 40;
+        // var pedro = 50;
+        // var pablo = 30;
+        //
+        //
+        // var agus = 60;
+        // var charo = 50;
+        // var emi = 30;
+        //
+        // function quienGano(competidor1, competidor2, competidor3){
+        //     if (competidor1 > competidor2 && competidor1 > competidor3){
+        //         console.log("Ganó el competidor1");
+        //     } else if (competidor2 > competidor1 && competidor2 > competidor3) {
+        //         console.log("Ganó el competidor2");
+        //     } else if (competidor3 > competidor1 && competidor3 > competidor2) {
+        //         console.log("Ganó el competidor3");
+        //     } else {
+        //         console.log("Empate!");
+        //     }
+        // }
+        //
+        // quienGano(juan, pablo, pedro)
+        //
+        // quienGano(agus, charo, emi)
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <p>Esta página contiene un script que va a promediar notas de estudiantes</p>
+</body>
+</html>

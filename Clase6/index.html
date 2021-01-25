@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>El primer script</title>
+    <script type="text/javascript">
+        function Persona(nombre, dni){
+            this.nombre = nombre;
+            this.dni = dni;
+        }
+        //
+        //
+        // var nombreCompleto = prompt("Ingrese su primer nombre y apellido")
+        //
+        // while (nombreCompleto.length < 1){
+        //     nombreCompleto = prompt("Ingrese su primer nombre y apellido")
+        // }
+        //
+        // var DNI = prompt("Ingrese su DNI")
+        //
+        // while (DNI.length < 7 || DNI.length > 8){
+        //     DNI = prompt("Ingrese su DNI")
+        // }
+        //
+        // var persona = new Persona(nombreCompleto.split(" "), DNI)
+        //
+        // // persona.nombre = persona.nombre.replace("Agustina", "María")
+        //
+        // // var dato = prompt("Ingrese el dato que quiere saber sobre la persona")
+        // // console.log(persona[dato.toLowerCase()]);
+        //
+        // console.log(persona)
+
+        // var productos = [
+        //     "auto",       // productos[0]
+        //     "lavadora",   // productos[1]
+        //     "tupper",     // productos[2]
+        //     "botella",
+        //     "MP3",
+        //     34
+        // ]
+        //
+        // console.log("Los productos que me quiero comprar son " + productos.toString());
+        //
+        // for(var i=0; i<productos.length; i++){
+        //     console.log(productos[i]);
+        // }
+
+
+        var personas = [
+            new Persona("Agus", 12837192),
+            new Persona("Lauti", 10412936),
+            new Persona("Conrad", 11229364),
+        ]
+
+        var nombreCompleto = prompt("Ingrese su primer nombre y apellido")
+
+        while (nombreCompleto.length < 1){
+            nombreCompleto = prompt("Ingrese su primer nombre y apellido")
+        }
+
+        var nombrePosta = nombreCompleto.split(",")
+
+        var DNI = prompt("Ingrese su DNI")
+
+        while (DNI.length < 7 || DNI.length > 8){
+            DNI = prompt("Ingrese su DNI")
+        }
+
+        var persona = new Persona(nombreCompleto, parseInt(DNI))
+
+        personas.push(persona);
+
+        console.log(personas)
+
+
+
+
+        // for(var i=0; i<personas.length; i++){
+        //     var persona = personas[i]
+        //
+        //     console.log(persona.nombre);
+        //     console.log(persona.dni);
+        // }
+
+
+
+
+
+        function Carrito(productos, descuento){
+            this.productos = productos;
+            this.descuento = descuento;
+
+            this.agregarProducto = function(){
+                // ESTO LO VEMOS LA CLASE QUE VIENE JEJ
+            }
+        }
+
+
+
+
+        var nombre = prompt("Ingrese nombre");
+        var apellido = prompt("Ingrese apellido");
+        var edad = parseInt(prompt("Ingrese edad"));
+
+        var array1 = [nombre,apellido];
+        var array2 = [edad];
+
+        function datos(array1, array2) {
+
+            var arrayJuntos = array1.concat(array2);
+
+            return arrayJuntos;
+        }
+        console.log(datos(array1, array2));
+
+
+
+
+    </script>
+</head>
+<body>
+    <p>Esta página va a tener un objeto persona</p>
+</body>
+</html>

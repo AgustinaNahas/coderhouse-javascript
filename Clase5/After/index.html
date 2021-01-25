@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>El primer script</title>
+    <script type="text/javascript">
+
+        function Nacimiento(dia, mes, anio){
+            this.dia = dia;
+            this.mes = mes;
+            this.anio = anio;
+        }
+
+        function Player(nombre, apellido, pieHabil, equipo, golesTotales, estado, estadoPie){
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.pieHabil = pieHabil;
+            this.equipo = equipo;
+            this.golesTotales = golesTotales;
+
+            this.nacimiento = new Nacimiento(4, 5, 1980);
+
+            this.nacimiento = new Object();
+            this.nacimiento.dia = 4
+            this.nacimiento.mes = 5
+            this.nacimiento.anio = 1980
+
+            // this.estado = estado
+            // this.estado.pieDerecho = estadoPie <-----    no funciona >:(
+
+            this.pasarA = function(nuevoEquipo){
+                this.equipo = nuevoEquipo
+            }
+
+            this.hacerGol = function(){
+                this.golesTotales++;
+            }
+
+        }
+
+        var riquelme = new Player("Roman", "Riquelme", 'derecho', 'Boca', 300, true, true)
+
+        console.log(riquelme.equipo, riquelme.golesTotales);
+
+        // riquelme.pasarA(prompt("Nuevo equipo para Riquelme:"));
+
+        // console.log(riquelme.equipo, riquelme.golesTotales);
+
+        riquelme.hacerGol();
+        riquelme.hacerGol();
+        riquelme.hacerGol();
+        riquelme.hacerGol();
+        riquelme.hacerGol();
+        riquelme.hacerGol();
+        riquelme.hacerGol();
+
+        console.log(riquelme.equipo, riquelme.golesTotales);
+
+        console.log(riquelme)
+
+        function funcionPiola(){
+            var unValor = 10;
+            return this;
+        }
+
+        console.log(funcionPiola())
+
+        function esValido(){
+            return true;
+        }
+
+        function Carrito(productos, descuento){
+            this.productos = productos
+            this.descuento = descuento;
+
+            this.agregarDescuento = function(codigoDescuento){
+                if (esValido(codigoDescuento)){
+                    descuento = 40;
+                }
+            }
+
+            this.agregarProducto = function(){
+                // ESTO LO VEMOS LA CLASE QUE VIENE JEJ
+            }
+        }
+
+        function Reserva(inicio, fin, cantPx, desayuno, ubicacion){
+            this.inicio = inicio;
+            this.fin = fin;
+            this.cantPx = cantPx;
+            this.desayuno = desayuno;
+            this.ubicacion = ubicacion;
+
+            this.calcularPrecio = function(){
+                var valorPorNochePorPersona = 0;
+
+                if (this.ubicacion == "Habitacion super cheta"){
+                    valorPorNochePorPersona = 2000;
+                }
+
+                console.log("valorPorNochePorPersona", valorPorNochePorPersona)
+
+                var precioFinal = valorPorNochePorPersona * this.cantPx * (this.fin-this.inicio)
+
+                console.log(precioFinal)
+
+                return precioFinal
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    <p>Esta página va a tener un objeto persona</p>
+</body>
+</html>

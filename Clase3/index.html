@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>El primer script</title>
+    <script type="text/javascript">
+
+        var maxNota = 10;
+        var minNota = 0;
+        var notaAprobación = 6;
+
+        function ingresarNota(){
+            var nota;
+
+            nota = parseInt(prompt("Ingrese una nota entre " + minNota + " y " + maxNota))
+
+            while(nota > maxNota || nota < minNota || !nota ){
+                console.log("Che, tu nota no es válida")
+                nota = parseInt(prompt("Ingrese una nota"))
+            }
+
+            return nota;
+        }
+
+        function pedirNotasYSacarPromedio(){
+
+            // Acá falta reemplazar por la función que pida la nota y la valide
+
+            var nota1 = parseInt(prompt("Ingrese una nota"));
+            var nota2 = parseInt(prompt("Ingrese una nota"));
+            var nota3 = parseInt(prompt("Ingrese una nota"));
+
+            // Acá podríamos usar la función sacarPromedio() en vez de hacerlo así
+
+            var promedio = (nota1 + nota2 + nota3) / 3;
+
+            return promedio;
+        }
+
+
+        function sacarPromedio(nota1, nota2, nota3){
+            var promedio = (nota1 + nota2 + nota3) / 3;
+
+            return promedio;
+        }
+
+        // console.log("Nota valida! Tu nota es " + ingresarNota());
+
+        // Acá el ciclo tiene que ser hasta 5 alumnos
+        // Y falta ver si aprobaron o no.
+
+        // for(var i=0; i<3; i++) {
+        //     console.log("Alumno nro " + i)
+        //
+        //     var promedio1 = pedirNotasYSacarPromedio();
+        //     var promedio2 = pedirNotasYSacarPromedio();
+        //     var promedio3 = pedirNotasYSacarPromedio();
+        //
+        //     console.log("Promedio primer trimestre: " + promedio1)
+        //     console.log("Promedio segundo trimestre: " + promedio2)
+        //     console.log("Promedio tercer trimestre: " + promedio3)
+        //
+        //     var promedioFinal = sacarPromedio(promedio1, promedio2, promedio3);
+        //
+        //     console.log("Promedio final: " + promedioFinal)
+        // }
+
+
+        // CALCULADORA
+
+        var operacion = prompt("Ingrese la operacion (suma/resta/multiplicación/división)")
+
+        var nro1 = parseInt(prompt("Ingrese el primer valor"));
+        var nro2 = parseInt(prompt("Ingrese el segundo valor"));
+
+        // if (operacion === "suma"){
+        //     console.log(nro1 + nro2)
+        // } else if (operacion === "resta"){
+        //     console.log(nro1 - nro2)
+        // } else if (operacion === "multiplicacion"){
+        //     console.log(nro1 * nro2)
+        // } else if (operacion === "division"){
+        //     console.log(nro1 / nro2)
+        // }
+
+        switch(operacion){
+            case "suma":
+                console.log(nro1+nro2);
+                break;
+            case "resta":
+                console.log(nro1-nro2);
+                break;
+            case "multiplicacion":
+                console.log(nro1*nro2);
+                break;
+            case "division":
+                console.log(nro1/nro2);
+                break;
+            default:
+                console.log("Operación errónea!");
+        }
+
+
+
+    </script>
+</head>
+<body>
+<p>Esta página contiene un script que va a promediar notas de estudiantes</p>
+</body>
+</html>

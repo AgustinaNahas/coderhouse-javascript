@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Clase7</title>
+    <script type="text/javascript">
+
+        function Persona(nombre, dni){
+            this.nombre = nombre;
+            this.dni = dni;
+        }
+
+        // var nombreGuardado = sessionStorage.getItem("nombre")
+
+        // if (!nombreGuardado){
+            nombreGuardado = prompt("Ingrese su nombre")
+            sessionStorage.setItem("nombre", nombreGuardado)
+        // }
+
+        var DNI = 19856124
+
+        sessionStorage.setItem("DNI", DNI);
+
+        // var agus = new Persona("Agus", 12837192);
+        //
+        // console.log(agus)
+
+        if (sessionStorage.carrito){
+            console.log("Terminá tu compra! Este es tu carrito:")
+            console.log(JSON.parse(sessionStorage.carrito))
+        }
+
+        function Carrito(productos, descuento){
+            this.productos = productos;
+            this.descuento = descuento;
+        }
+
+        var carrito = new Carrito(["discman", "mp3", "ipod", "tocadiscos"], 0.5)
+
+        console.log(carrito);
+
+        var carritoJSON = JSON.stringify(carrito)
+
+        sessionStorage.setItem("carrito_" + nombreGuardado, carritoJSON)
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <p></p>
+</body>
+</html>

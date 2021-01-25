@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>El primer script</title>
+    <script type="text/javascript">
+
+        var juan = 40;
+        var pedro = 50;
+        var pablo = 30;
+
+
+        var agus = 60;
+        var charo = 50;
+        var emi = 30;
+
+        function quienGano(competidor1, competidor2, competidor3){
+            if (competidor1 > competidor2 && competidor1 > competidor3){
+                console.log("Ganó el competidor1");
+            } else if (competidor2 > competidor1 && competidor2 > competidor3) {
+                console.log("Ganó el competidor2");
+            } else if (competidor3 > competidor1 && competidor3 > competidor2) {
+                console.log("Ganó el competidor3");
+            } else {
+                console.log("Empate!");
+            }
+        }
+
+        // quienGano(juan, pablo, pedro)
+
+        // quienGano(agus, charo, emi)
+
+        // ascensor(5)
+
+        // var distanciaRecorrida = 0;
+        // var hayObstaculo = false;
+        //
+        // var obstaculo = 4;
+        //
+        // while (!hayObstaculo){
+        //     distanciaRecorrida++;
+        //     hayObstaculo = (distanciaRecorrida === obstaculo);
+        // }
+
+        // function promedioFinal () {
+        //     var nota1 = parseInt(prompt("Ingrese la primer nota para promedio"));
+        //     var nota2 = parseInt(prompt("Ingrese la segunda nota para promedio"));
+        //     var nota3 = parseInt(prompt("Ingrese la tercer nota para promedio"));
+        //
+        //     while (nota1<1 || nota2<1 || nota3<1 || nota1>10 || nota2>10 || nota3>10) {
+        //         alert("Su nota es invalida");
+        //         nota1 = parseInt(prompt("Ingrese de nuevo la primer nota para promedio"));
+        //         nota2 = parseInt(prompt("Ingrese de nuevo la segunda nota para promedio"));
+        //         nota3 = parseInt(prompt("Ingrese de nuevo la tercer nota para promedio"));
+        //     }
+        //
+        //     var promedio = (nota1 + nota2 + nota3) / 3;
+        //
+        //     if (promedio >=6 && promedio<=10) {
+        //         alert ("Tu promedio esta aprobado");
+        //     }
+        //     else if (promedio <6 && promedio>=1) {
+        //         alert ("No alcanzo tu promedio");
+        //     }
+        //     else {
+        //         alert ("Hay un erro en el calculo de tu promedio");
+        //     }
+        //     return promedio;
+        // }
+        //
+        // console.log (promedioFinal());
+
+
+
+        // function ascensor(piso){
+        //     console.log("Te subiste al ascensor!")
+        //
+        //     for(var i=0; i<=10; i++){
+        //
+        //         if (i === 7){
+        //             continue;
+        //         }
+        //
+        //         console.log("Piso " + i)
+        //
+        //         if (i === piso){
+        //             console.log("Llegaste al piso!")
+        //             break;
+        //         }
+        //     }
+        // }
+        //
+        // function subte(estacion){
+        //     console.log("Te subiste al subte!")
+        //
+        //     for(var i=0; i<=14; i++){
+        //
+        //         if (i === 6){
+        //             continue;
+        //         }
+        //
+        //         console.log("Estacion " + i)
+        //
+        //         if (i === estacion){
+        //             console.log("Llegaste a la estacion!")
+        //             break;
+        //         }
+        //     }
+        // }
+
+var diaDeLaSemana = "martes"
+
+switch(diaDeLaSemana){
+    case "sábado":
+        console.log("Podemos salir a pasear!");
+        break;
+    case "lunes":
+        console.log("Hay clase de Javascript con Agus :( nos tenemos que quedar, o llevar la compu al parque")
+        break;
+    case "miércoles":
+        console.log("Hay clase de Javascript con Agus :( nos tenemos que quedar, o llevar la compu al parque")
+        break;
+    default:
+        console.log("Podemos salir a pasear!");
+        break;
+}
+
+
+
+    </script>
+</head>
+<body>
+    <p>Esta página contiene un script que va a promediar notas de estudiantes</p>
+</body>
+</html>
