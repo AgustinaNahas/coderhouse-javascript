@@ -38,7 +38,7 @@
     </nav>
 
     <div class="container">
-        <h1 style="margin-bottom: 24px;">Bienvenides!</h1>
+        <h1 id="titulo" style="margin-bottom: 24px;">Bienvenides!</h1>
 
         <div class="alert alert-primary" role="alert">
             Acá tenemos nuestro primer formulario, lo querés completar?
@@ -67,16 +67,40 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button type="submit" class="btn btn-primary log-in">Sign in</button>
         </form>
 
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Launch demo modal
+        </button>
 
-    </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <section class="table-responsive body__border"> <h2>Productos</h2> <form> <table class="recomendados"> <tr> <th><img src="Imagenes\Panes\Baguette.jpg" class="inicioRecomendados img-thumbnail img__aniImag"/></th> <th><img src="Imagenes\Dulces\Pepas.jpg" class="inicioRecomendados img-thumbnail img__aniImag"/></th> <th><img src="Imagenes\Salados\Pizzas.jpg" class="inicioRecomendados img-thumbnail img__aniImag"/></th> </tr> <!--------------------------- VARIEDAD DE PANES -----------------------------> <tr> <td> <div> <!---------------------------- Boton Panes modal ------------------------> <input type="button" name="boton" value="Panes" class="body__centrarBotones" data-bs-toggle="modal" data-bs-target="#staticBackdrop"/> <!---------------------------------- Modal ----------------------------->
+
+
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script type="text/javascript" src="script.js"/>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-            crossorigin="anonymous"></script>
 
 </body>
 </html>
