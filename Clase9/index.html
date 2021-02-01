@@ -86,8 +86,8 @@
                 <div class="row mb-3">
                     <label for="inputPlaneta" class="col-sm-2 col-form-label">Planeta</label>
                     <div class="col-sm-10">
-                        <select class="custom-select mr-sm-2" id="inputPlaneta">
-                            <option selected>Elegir...</option>
+                        <select class="form-control" id="inputPlaneta">
+                            <option selected value="">Elegir...</option>
                             <option value="0">Mercurio</option>
                             <option value="1">Venus</option>
                             <option value="2">Marte</option>
@@ -115,7 +115,8 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-dark calcular">Calcular precio</button>
+
+                <button type="button" class="btn btn-dark calcular" id="calcular">Calcular precio</button>
 
     <!--            <div class="spinner-border" role="status">-->
     <!--                <span class="sr-only">Loading...</span>-->
@@ -134,7 +135,7 @@
             </form>
 
             <div class="input-group busqueda">
-                <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar">
+                <input type="text" class="form-control busqueda-input" placeholder="Buscar..." aria-label="Buscar">
                 <div class="input-group-append">
                     <span class="input-group-text"><i class="bi bi-search" style=""></i></span>
                 </div>

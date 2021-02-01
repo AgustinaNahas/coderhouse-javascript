@@ -51,7 +51,9 @@ const planetas=[
     new Planeta('Neptuno', 30, "https://img.icons8.com/color/344/neptune-planet.png")
 ]
 
-function calcularPrecio(){
+function calcularPrecio(event){
+
+    console.log(event);
 
     // Pido los datos para el cálculo
 
@@ -79,6 +81,34 @@ function calcularPrecio(){
     document.getElementById("alert-calculo").className = "alert alert-warning alert-dismissible fade show"
 
     return Number.parseFloat(costo).toFixed(2);
+}
+
+var buttonCalcular = document.getElementById("calcular");
+
+buttonCalcular.addEventListener("click", calcularPrecio);
+
+
+
+var nombre = document.getElementById("inputName")
+var cantPx = document.getElementById("inputPxs")
+var planeta = document.getElementById("inputPlaneta")
+
+
+nombre.addEventListener("blur", validarCampo);
+cantPx.addEventListener("blur", validarCampo);
+planeta.addEventListener("blur", validarCampo);
+
+function validarCampo(event){
+
+    console.log(event);
+
+    var valor = event.target.value;
+
+    if (valor == ""){
+        event.target.className = "form-control is-invalid"
+    } else {
+        event.target.className = "form-control"
+    }
 
 
 }
@@ -86,17 +116,61 @@ function calcularPrecio(){
 function buscar(texto){
     var i;
     for (i = 0; i < planetas.length; i++) {
-        if (planetas[i].nombre == texto) return true;
+        if (planetas[i].nombre == texto) return planetas[i];
     }
     return false;
 }
 
-function fullWitdh(){
+function fullWitdh(e){
+    console.log(e)
     document.getElementsByClassName("busqueda")[0].className = "input-group busqueda fullWidth"
 }
 
-function halfWitdh(){
+function halfWitdh(e){
+    console.log(e)
     document.getElementsByClassName("busqueda")[0].className = "input-group busqueda"
+}
+
+window.onscroll = function() {myFunction()};
+
+function myFunction(e) {
+
+    console.log(document.body.scrollTop)
+    console.log(document.documentElement.scrollTop)
+
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("titulo").innerText = "Bienvenidos";
+    } else {
+        document.getElementById("titulo").innerText = "Bienvenidas";
+    }
+}
+
+
+
+document.getElementsByClassName("busqueda-input")[0].onblur = halfWitdh
+document.getElementsByClassName("busqueda-input")[0].onfocus = fullWitdh
+
+
+document.getElementsByClassName("busqueda-input")[0].onkeypress = capturarEnter
+
+function capturarEnter(event){
+    if (event.which == 13 || event.keyCode == 13) { // 13 es el código asociado a la tecla enter
+        var resultado = buscar(event.target.value)
+
+        if (resultado){
+            document.getElementById("alert-busqueda").className =
+                "alert alert-success alert-dismissible fade show";
+            document.getElementById("alert-busqueda-texto").innerText =
+                "Sí, vamos al planeta " + resultado.nombre + " que queda a " + resultado.distanciaTierra() + " UA";
+        } else {
+            document.getElementById("alert-busqueda").className =
+                "alert alert-danger alert-dismissible fade show";
+            document.getElementById("alert-busqueda-texto").innerText =
+                "No, no vamos a ese planeta";
+
+        }
+    }
+
 }
 
 
