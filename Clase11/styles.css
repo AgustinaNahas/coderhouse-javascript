@@ -81,12 +81,18 @@ label, h2 {
     width: 100%;
 }
 
-#carrito_div {
+#carrito_productos {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+
+}
+
+.carrito_form_ingresar label {
+    color: black;
+
 }
 
 article.producto .card {

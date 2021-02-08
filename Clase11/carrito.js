@@ -93,7 +93,7 @@ function mostrarCarrito(){
             "<p>Precio: " + naveEnVenta.precio + "</p>" +
             "<button class='btn btn-dark' onClick='agregarAlCarrito(`" + naveEnVenta.id + "`)'>Agregar al carrito</button></div>" ;
 
-        document.getElementById("carrito_div").appendChild(naveHTML);
+        document.getElementById("carrito_productos").appendChild(naveHTML);
     })
 }
 
@@ -210,6 +210,16 @@ function comprarAnonim(){
 document.getElementsByClassName("carrito_button_ingresar")[0].addEventListener("click", ingresar)
 document.getElementsByClassName("carrito_button_anonim")[0].addEventListener("click", comprarAnonim)
 
+
+// window.addEventListener('load', function(){
+//     console.log("Página cargada en Javascript!" + (new Date()).getMilliseconds())
+// })
+
+$( document ).ready(function()
+{
+    document.getElementById("modal-login").click()
+    // console.log( "Página cargada en jQuery!" + (new Date()).getMilliseconds() );
+});
 
 
 
