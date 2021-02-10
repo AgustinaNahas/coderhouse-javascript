@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"-->
+<!--          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Oswald&display=swap" rel="stylesheet">
+
+    <title>SpaceTrip - Eventos</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Spacetrip   <i class="bi bi-star" style="color: white;"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Viajes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Precios</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="parallax"></div>
+
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container titulos">
+            <h1 class="display-4">Spacetrip</h1>
+            <p class="lead">Primeros viajes espaciales turisticos de la historia.</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
+    <div id="wunderbiene">
+        <img id="wunimg" src="https://images.emojiterra.com/mozilla/512px/1f680.png" />
+    </div>
+
+
+    <section id="spacetrip" style="background-color: #0D1221; z-index: 500; position: relative;">
+
+        <div class="container" style="padding: 60px;">
+            <h2 id="titulo" style="margin-bottom: 24px;">Bienvenides!</h2>
+
+            <div id="seccion" class="alert alert-dark alert-dismissible fade show" role="alert">
+                        <i class="bi bi-star" style="margin-right: 5px;"></i>  Los viajes aún no están funcionando, pero comenzarán muy pronto.
+                        Anotate si querés reservar tu viaje lo antes posible. Hay pocos lugares!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+            </div>
+
+            <form style="margin-top: 60px;">
+                <div class="row mb-3">
+                    <label for="inputName" class="col-sm-2 col-form-label">Nombre</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputName">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputPxs" class="col-sm-2 col-form-label">Cantidad de pasajeros</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="inputPxs">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="inputPlaneta" class="col-sm-2 col-form-label">Planeta</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="inputPlaneta">
+                            <option selected value="">Elegir...</option>
+                            <option value="0">Mercurio</option>
+                            <option value="1">Venus</option>
+                            <option value="2">Marte</option>
+                            <option value="3">Jupiter</option>
+                            <option value="4">Saturno</option>
+                            <option value="5">Urano</option>
+                            <option value="6">Neptuno</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <label for="inputFecha" class="col-2 col-form-label">Fecha de viaje</label>
+                    <div class="col-10">
+                        <input class="form-control" type="date" value="2011-08-19" id="inputFecha">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-10 offset-sm-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="inputIdaYVuelta">
+                            <label class="form-check-label" for="inputIdaYVuelta">
+                                Ida y vuelta
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-dark calcular" id="calcular">Calcular precio</button>
+
+    <!--            <div class="spinner-border" role="status">-->
+    <!--                <span class="sr-only">Loading...</span>-->
+    <!--            </div>-->
+
+                <div id="alert-calculo" class="alert alert-warning alert-dismissible fade hide" role="alert"
+                     style="margin-top: 30px; margin-bottom: 60px;">
+
+                    <img id="alert-imagen-planeta" src="" style="display: inline-block; width: 40px; height: 40px;"/>
+                    <i class="bi bi-star" style="margin-right: 5px;"></i> El viaje que ingresaste tiene un precio de <strong id="alert-calculo-precio"></strong> U$D
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+            </form>
+
+            <div class="input-group busqueda">
+                <input type="text" class="form-control busqueda-input" placeholder="Buscar..." aria-label="Buscar">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="bi bi-search" style=""></i></span>
+                </div>
+            </div>
+
+            <div id="alert-busqueda" class="alert alert-danger alert-dismissible fade hide" role="alert"
+                 style="margin-top: 30px; margin-bottom: 60px;">
+                <i class="bi bi-star" style="margin-right: 5px;"></i>
+                <span id="alert-busqueda-texto"></span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+        </div>
+<!--        <nav class="navbar navbar-light bg-light">-->
+
+<!--        </nav>-->
+    </section>
+
+
+
+    <section id="carrito" style="background-color: lightgrey; padding-top: 40px; padding-bottom: 40px; z-index: 10; position: relative;">
+
+        <div class="container">
+            <p>
+                <a class="btn btn-dark" data-toggle="collapse" href="#carrito-content" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <i class="bi bi-cart"></i>
+                </a>
+            </p>
+            <div class="collapse" id="carrito-content">
+                <ul id="carrito_carrito" class="container" style="padding: 60px;">
+                </ul>
+            </div>
+        </div>
+
+        <div id="carrito_productos" class="container">
+        </div>
+
+    </section>
+    <!-- Button trigger modal -->
+    <button id="modal-login" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="display: none;">
+        Login
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="carrito_div" class="modal-body">
+                    <form class="carrito_form_ingresar">
+                        <div class="form-group">
+                            <label for="nombreUsuarie">Nombre</label>
+                            <input type="text" class="form-control" id="nombreUsuarie">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark carrito_button_ingresar" data-dismiss="modal">Ingresar</button>
+                    <button type="button" class="btn btn-light carrito_button_anonim" data-dismiss="modal">Comprar anónimamente</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+<!--        <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>-->
+<!--        <script type="text/javascript" src="js/jquery-3.5.1.js"></script>-->
+
+
+    <script type="text/javascript" src="spacetrip.js"> </script>
+    <script type="text/javascript" src="carrito.js"> </script>
+    <script type="text/javascript" src="mouse.js"> </script>
+
+
+</body>
+</html>
