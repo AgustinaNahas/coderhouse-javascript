@@ -244,10 +244,13 @@ function eliminarDelCarrito(nave_id){
 }
 
 function eliminarDelCarritoDOM(nave_id){
-    console.log(".producto_carrito_" + nave_id)
-    $(".producto_carrito_" + nave_id).fadeOut();
 
-    document.getElementsByClassName("producto_carrito_" + nave_id)[0].remove();
+
+    console.log(".producto_carrito_" + nave_id)
+
+    $(".producto_carrito_" + nave_id).fadeOut(400, function(){
+        document.getElementsByClassName("producto_carrito_" + nave_id)[0].remove();
+    });
 
     console.log("Che, quitarSelectorCantidad")
 
@@ -288,6 +291,12 @@ function ingresar(){
 
     document.getElementsByClassName("carrito_form_ingresar")[0].remove();
 
+    // e.preventDefault(); //Sirve para frenar la propagación del click en un (recargar pagina)
+
+    $('html, body').animate({
+        scrollTop: $("#carrito").offset().top
+    }, 2000);
+
 }
 
 function comprarAnonim(){
@@ -296,6 +305,10 @@ function comprarAnonim(){
     carrito = new Carrito();
 
     document.getElementsByClassName("carrito_form_ingresar")[0].remove();
+
+    $('html, body').animate({
+        scrollTop: $("#carrito").offset().top
+    }, 2000);
 }
 
 
@@ -305,12 +318,12 @@ function comprarAnonim(){
 $(".carrito_button_ingresar").click(ingresar);
 $(".carrito_button_anonim").click(comprarAnonim);
 
-$("#carrito a.btn-dark").hover( function (){
-        $( this ).css( "background" , "red" );
-    },
-    function () {
-        $( this ).css( "background" , "darkgrey" );
-    });
+// $("#carrito a.btn-dark").hover( function (){
+//         $( this ).css( "background" , "red" );
+//     },
+//     function () {
+//         $( this ).css( "background" , "darkgrey" );
+//     });
 
 
 
@@ -319,4 +332,14 @@ $( document ).ready(function()
     document.getElementById("modal-login").click()
 });
 
+
+$("#button-carrito").click(function(){
+    $("#carrito-content").slideToggle()
+
+    var colorActual = $("#button-carrito")[0].style.background
+
+    if (colorActual === "#343a40") $("#button-carrito").css("background", "grey")
+    else $("#button-carrito").css("background", "#343a40")
+
+})
 
