@@ -1,0 +1,108 @@
+
+
+label, p, span, div, button {
+    font-family: 'Lato', sans-serif;
+
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("https://www.nasa.gov/sites/default/files/thumbnails/image/nextgen_ostem_feature.png");
+
+    /* Set a specific height */
+    min-height: 600px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jumbotron {
+    margin-top: -400px;
+    background-color: rgba(0, 0, 0, 0.6 );
+    margin-bottom: 150px;
+    color: white;
+}
+
+h1, h2 {
+    font-family: 'Oswald', sans-serif;
+}
+p.lead{
+    font-family: 'Lato', sans-serif;
+}
+
+form {
+    margin-bottom: 60px;
+}
+
+label, h2 {
+    color: white;
+}
+
+
+.left {
+    -moz-transform: rotate(-50deg) scaleX(-1);
+    -o-transform: rotate(-50deg) scaleX(-1);
+    -webkit-transform: rotate(-50deg) scaleX(-1);
+    transform: rotate(-50deg) scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+.right {
+    -moz-transform: rotate(-50deg) scaleX(1);
+    -o-transform: rotate(-50deg) scaleX(1);
+    -webkit-transform: rotate(-50deg) scaleX(1);
+    transform: rotate(-50deg) scaleX(1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+#wunderbiene {
+    transition: transform .15s
+}
+
+#wunderbiene img {
+    width: 50px;
+    position: relative;
+    z-index: 100;
+    left:-50%;
+    top: 50px;
+}
+
+.busqueda {
+    transition: width 0.5s;
+    width: 50%;
+}
+
+.busqueda.fullWidth {
+    width: 100%;
+}
+
+#carrito_productos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.carrito_form_ingresar label {
+    color: black;
+
+}
+
+article.card {
+    width: 300px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+}
+
+#carrito_carrito li{
+    list-style: none;
+}
