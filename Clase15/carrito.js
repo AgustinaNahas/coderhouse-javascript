@@ -73,53 +73,6 @@ var carrito;
 
 var navesEnVenta = [];
 
-$( document ).ready(function()
-{
-    document.getElementById("modal-login").click()
-
-    var api_url = 'https://api.estadisticasbcra.com/usd' ; // URL destino de la llamada a la API
-    var key = 'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDU2MjU2NzYsInR5cGUiOiJleHRlcm5hbCIsInVzZXIiOiJtLmFndXN0aW5hLm5haGFzQGdtYWlsLmNvbSJ9.8QdWDmNsX6u1WXHCSG-MlBkkpXG5hg8ny3zV8U7Bj2RoYn8ZEP9YJFtZvjbyicuUoshaBQSkY68G6_HgEgGhhw' // clave alfanumerica para autenticarse (ej)
-
-        $.ajax({
-            url: api_url,
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader('Authorization', 'Bearer ' + key);
-            },
-            success: function(result){
-                console.log(result)
-            }
-        })
-
-
-
-    $.get( "https://swapi.dev/api/starships",
-        function(data, status){
-        console.log(data, status)
-            if (status === "success"){
-                    document.getElementById("alertCarga").className =
-                        "alert alert-success alert-dismissible fade show";
-                } else {
-                    document.getElementById("alertCarga").className =
-                        "alert alert-danger alert-dismissible fade show";
-
-                }
-
-            data.results.forEach((nave) => {
-                var id = nave.name.split(" ").join("-").toLowerCase()
-                navesEnVenta.push(
-                    new NaveEnVenta(id, nave.name, "https://img.icons8.com/color/452/" + id + ".png", nave.cost_in_credits)
-                )
-            })
-        }
-    );
-
-    console.log("Y LA INFO CUANDO TAMO READY ES...")
-    console.log(navesEnVenta)
-
-
-
-});
-
 // const navesEnVenta = [
 //     new NaveEnVenta("tie_fighter", "Tie Fighter", "https://img.icons8.com/color/452/tie-fighter.png", 4000),
 //     new NaveEnVenta("millenium_falcon", "Millenium Falcon", "https://img.icons8.com/color/452/star-wars-millenium-falcon.png", 10000),
@@ -360,30 +313,4 @@ function comprarAnonim(){
         scrollTop: $("#carrito").offset().top
     }, 2000);
 }
-
-
-// document.getElementsByClassName("carrito_button_ingresar")[0].addEventListener("click", ingresar)
-// document.getElementsByClassName("carrito_button_anonim")[0].addEventListener("click", comprarAnonim)
-
-$(".carrito_button_ingresar").click(ingresar);
-$(".carrito_button_anonim").click(comprarAnonim);
-
-// $("#carrito a.btn-dark").hover( function (){
-//         $( this ).css( "background" , "red" );
-//     },
-//     function () {
-//         $( this ).css( "background" , "darkgrey" );
-//     });
-
-
-
-$("#button-carrito").click(function(){
-    $("#carrito-content").slideToggle()
-
-    var colorActual = $("#button-carrito")[0].style.background
-
-    if (colorActual === "#343a40") $("#button-carrito").css("background", "grey")
-    else $("#button-carrito").css("background", "#343a40")
-
-})
 
